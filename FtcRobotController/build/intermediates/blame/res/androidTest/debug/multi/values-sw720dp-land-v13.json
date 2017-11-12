@@ -1,0 +1,74 @@
+[
+    {
+        "outputFile": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/bundles/debug/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 58,
+                        "endOffset": 109
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/bundles/debug/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 58,
+                        "endOffset": 109
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "outputFile": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 58,
+                    "endOffset": 109
+                },
+                "from": {
+                    "file": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/bundles/debug/res/values-sw720dp-land-v13/values-sw720dp-land-v13.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 58,
+                        "endOffset": 109
+                    }
+                }
+            }
+        ]
+    }
+]

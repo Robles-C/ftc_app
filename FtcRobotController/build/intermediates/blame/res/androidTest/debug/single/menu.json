@@ -1,0 +1,38 @@
+[
+    {
+        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/main_menu.xml",
+        "source": "/Users/FTC6570/.android/build-cache/ba7a8a682c1f680c6bdc9003404cf72db7008a5b/output/res/menu/main_menu.xml"
+    },
+    {
+        "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/menu_server.xml",
+        "source": "/Users/FTC6570/.android/build-cache/17bd7ed78f58f40db4a856e3b5ae428c5bdf6ebc/output/res/menu/menu_server.xml"
+    },
+    {
+        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/ftc_robot_controller.xml",
+        "source": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/bundles/debug/res/menu/ftc_robot_controller.xml"
+    },
+    {
+        "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/main_menu.xml",
+        "source": "/Users/FTC6570/.android/build-cache/c6a9362e09bb164b633e55534017e80220b0ffe5/output/res/menu/main_menu.xml"
+    },
+    {
+        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/menu_server.xml",
+        "source": "/Users/FTC6570/.android/build-cache/599a90414ea8144b8f871ae4e02d1b1a2e110540/output/res/menu/menu_server.xml"
+    },
+    {
+        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/main_menu.xml",
+        "source": "/Users/FTC6570/.android/build-cache/6d0072d770c735e5b0b0c94180fe3ef4402352d6/output/res/menu/main_menu.xml"
+    },
+    {
+        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/ftc_robot_controller.xml",
+        "source": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/bundles/debug/res/menu/ftc_robot_controller.xml"
+    },
+    {
+        "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/ftc_robot_controller.xml",
+        "source": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/bundles/debug/res/menu/ftc_robot_controller.xml"
+    },
+    {
+        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/menu/menu_server.xml",
+        "source": "/Users/FTC6570/.android/build-cache/e33b6c19cb012aaf4c6697192719ef2f8e641649/output/res/menu/menu_server.xml"
+    }
+]
