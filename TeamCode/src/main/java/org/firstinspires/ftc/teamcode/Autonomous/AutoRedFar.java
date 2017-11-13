@@ -25,7 +25,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
  */
 
 @Autonomous(name="AutoRedFar", group ="Autonomous")
-
+@Disabled
 public class AutoRedFar extends LinearOpMode {
 
     ColorSensor color_sensor;

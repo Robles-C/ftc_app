@@ -25,6 +25,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
  */
 
 @Autonomous(name="AutoBlueClose", group ="Autonomous")
+@Disabled
 
 public class AutoBlueClose extends LinearOpMode {
 
@@ -38,7 +39,7 @@ public class AutoBlueClose extends LinearOpMode {
     @Override public void runOpMode() {
         color_sensor = hardwareMap.colorSensor.get("color");
         color_sensor.enableLed(true);
-        
+
 
         color_sensor.red();   // Red channel value
         color_sensor.green(); // Green channel value

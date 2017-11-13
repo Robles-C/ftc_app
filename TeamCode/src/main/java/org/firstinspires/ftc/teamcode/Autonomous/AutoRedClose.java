@@ -25,7 +25,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
  */
 
 @Autonomous(name="AutoRedClose", group ="Autonomous")
-
+@Disabled
 public class AutoRedClose extends LinearOpMode {
 
     ColorSensor color_sensor;
