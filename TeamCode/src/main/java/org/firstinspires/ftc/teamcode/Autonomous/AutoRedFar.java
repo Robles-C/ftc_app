@@ -24,7 +24,7 @@ import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
  * Created by Cristian on 11/10/17.
  */
 
-@Autonomous(name="AutoRedFar", group ="Autonomous")
+@Autonomous(name="AutoRedFar", group ="AutoRed")
 @Disabled
 public class AutoRedFar extends LinearOpMode {
 

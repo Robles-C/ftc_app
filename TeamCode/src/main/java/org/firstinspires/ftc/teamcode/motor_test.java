@@ -5,6 +5,7 @@ import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
+import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
 
@@ -39,6 +40,7 @@ public class motor_test extends OpMode
         rightOne = hardwareMap.get(DcMotor.class, "rf");
         rightTwo = hardwareMap.get(DcMotor.class, "rb");
         leftTwo = hardwareMap.get(DcMotor.class, "lb");
+        //extend = hardwareMap.get(Servo.class, "servo1");
     }
     @Override
     public void loop() {
