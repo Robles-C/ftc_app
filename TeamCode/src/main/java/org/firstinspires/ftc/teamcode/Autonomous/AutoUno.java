@@ -49,8 +49,9 @@ public class AutoUno extends LinearOpMode {
     static final double     WHEEL_DIAMETER_INCHES   = 4.0;     // For figuring circumference
     static final double     COUNTS_PER_INCH         = ((COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
                                                       (WHEEL_DIAMETER_INCHES * 3.1415));
-    static final double     DRIVE_SPEED             = 0.6;
+    static final double     DRIVE_SPEED             = 0.39;
     static final double     TURN_SPEED              = 0.5;
+    static final double     STRAFE_SPEED            = 0.4;
 
     @Override
     public void runOpMode() {
@@ -87,8 +88,11 @@ public class AutoUno extends LinearOpMode {
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
         encoderDrive(DRIVE_SPEED,  15,  15, 5.0);
-        encoderDrive(TURN_SPEED,   12, -12, 4.0);
-        encoderDrive(DRIVE_SPEED, -6, -6, 4.0);
+        //encoderDrive(TURN_SPEED,   12, -12, 4.0);
+        //encoderDrive(DRIVE_SPEED, -6, -6, 4.0);
+        //encoderStrafe(STRAFE_SPEED, -6, 6, 6, -6, 4.0);
+        encoderStrafe(STRAFE_SPEED, -15, 15, 15,-15, 10.0);
+        encoderStrafe(STRAFE_SPEED, 15, -15, -15, 15, 10.0);
 
 
         telemetry.addData("Path", "Complete");
@@ -111,6 +115,11 @@ public class AutoUno extends LinearOpMode {
 
         // Ensure that the opmode is still active
         if (opModeIsActive()) {
+// Turn On RUN_TO_POSITION
+            robot.lf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            robot.rf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            robot.lb.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            robot.rb.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
             // Determine new target position, and pass to motor controller
             newLeftTarget = robot.lf.getCurrentPosition() + (int)(leftInches * COUNTS_PER_INCH);
@@ -120,11 +129,8 @@ public class AutoUno extends LinearOpMode {
             robot.rf.setTargetPosition(newRightTarget);
             robot.rb.setTargetPosition(newRightTarget);
 
-            // Turn On RUN_TO_POSITION
-            robot.lf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            robot.rf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            robot.lb.setMode(DcMotor.RunMode.RUN_TO_POSITION);
-            robot.rb.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+
 
             // reset the timeout time and start motion.
             runtime.reset();
@@ -149,6 +155,78 @@ public class AutoUno extends LinearOpMode {
                 telemetry.addData("Path2",  "Running at %7d :%7d",
                                             robot.lf.getCurrentPosition(),
                                             robot.rf.getCurrentPosition());
+                telemetry.update();
+            }
+
+            // Stop all motion;
+            robot.lf.setPower(0);
+            robot.rf.setPower(0);
+            robot.lb.setPower(0);
+            robot.rb.setPower(0);
+
+            // Turn off RUN_TO_POSITION
+            robot.lf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            robot.rf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            robot.lb.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+            robot.rb.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+
+            sleep(250);   // optional pause after each move
+        }
+    }
+    public void encoderStrafe(double speed,
+                             double lfInches,double lbInches,
+                             double rfInches , double rbInches,
+                             double timeoutS) {
+        int newLfTarget;
+        int newRfTarget;
+        int newRbTarget;
+        int newLbTarget;
+
+        // Ensure that the opmode is still active
+        if (opModeIsActive()) {
+// Turn On RUN_TO_POSITION
+            robot.lf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            robot.rf.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            robot.lb.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+            robot.rb.setMode(DcMotor.RunMode.RUN_TO_POSITION);
+
+            // Determine new target position, and pass to motor controller
+            newLfTarget = robot.lf.getCurrentPosition() + (int)(lfInches * COUNTS_PER_INCH);
+            newRfTarget = robot.rf.getCurrentPosition() + (int)(rfInches * COUNTS_PER_INCH);
+            newLbTarget = robot.lb.getCurrentPosition() + (int)(lbInches * COUNTS_PER_INCH);
+            newRbTarget = robot.rb.getCurrentPosition() + (int)(rbInches * COUNTS_PER_INCH);
+
+            robot.lf.setTargetPosition(newLfTarget);
+            robot.lb.setTargetPosition(newLbTarget);
+            robot.rf.setTargetPosition(newRfTarget);
+            robot.rb.setTargetPosition(newRbTarget);
+
+
+
+
+            // reset the timeout time and start motion.
+            runtime.reset();
+            robot.lf.setPower(Math.abs(speed));
+            robot.rf.setPower(Math.abs(speed));
+            robot.lb.setPower(Math.abs(speed));
+            robot.rb.setPower(Math.abs(speed));
+
+            // keep looping while we are still active, and there is time left, and both motors are running.
+            // Note: We use (isBusy() && isBusy()) in the loop test, which means that when EITHER motor hits
+            // its target position, the motion will stop.  This is "safer" in the event that the robot will
+            // always end the motion as soon as possible.
+            // However, if you require that BOTH motors have finished their moves before the robot continues
+            // onto the next step, use (isBusy() || isBusy()) in the loop test.
+            while (opModeIsActive() &&
+                    (runtime.seconds() < timeoutS) &&
+                    (robot.lf.isBusy() && robot.rf.isBusy()
+                            && robot.lb.isBusy() && robot.rb.isBusy())) {
+
+                // Display it for the driver.
+                telemetry.addData("Path1",  "Running to %7d :%7d", newLfTarget,  newRfTarget);
+                telemetry.addData("Path2",  "Running at %7d :%7d",
+                        robot.lf.getCurrentPosition(),
+                        robot.rf.getCurrentPosition());
                 telemetry.update();
             }
 
