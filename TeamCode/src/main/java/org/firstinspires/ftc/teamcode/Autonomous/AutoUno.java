@@ -51,7 +51,7 @@ public class AutoUno extends LinearOpMode {
                                                       (WHEEL_DIAMETER_INCHES * 3.1415));
     static final double     DRIVE_SPEED             = 0.39;
     static final double     TURN_SPEED              = 0.5;
-    static final double     STRAFE_SPEED            = 0.4;
+    static final double     STRAFE_SPEED            = 0.25;
 
     @Override
     public void runOpMode() {
@@ -87,12 +87,11 @@ public class AutoUno extends LinearOpMode {
 
         // Step through each leg of the path,
         // Note: Reverse movement is obtained by setting a negative distance (not speed)
-        encoderDrive(DRIVE_SPEED,  15,  15, 5.0);
         //encoderDrive(TURN_SPEED,   12, -12, 4.0);
         //encoderDrive(DRIVE_SPEED, -6, -6, 4.0);
         //encoderStrafe(STRAFE_SPEED, -6, 6, 6, -6, 4.0);
-        encoderStrafe(STRAFE_SPEED, -15, 15, 15,-15, 10.0);
-        encoderStrafe(STRAFE_SPEED, 15, -15, -15, 15, 10.0);
+        //encoderStrafe(STRAFE_SPEED, -5, 5, 5,-5, 10.0);
+        encoderDrive(DRIVE_SPEED,-25,-25,15);
 
 
         telemetry.addData("Path", "Complete");
