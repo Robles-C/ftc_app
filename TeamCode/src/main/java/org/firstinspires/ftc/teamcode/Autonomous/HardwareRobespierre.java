@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.Autonomous;
 
+import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -17,9 +18,11 @@ public class HardwareRobespierre
     public DcMotor rb = null;
     //public DcMotor lift = null;
 
-    //public Servo extend = null;
-    //public Servo grabber = null;
-    //public Servo color_arm = null;
+    public Servo extend = null;
+    public Servo grabber = null;
+    public Servo color_arm = null;
+
+    public ColorSensor colorSensor = null;
 
 
     /* local OpMode members. */
@@ -64,12 +67,14 @@ public class HardwareRobespierre
         //lift.setMode(DcMotor.RunMode.RUN_WITHOUT_ENCODER);
 
         // Define and initialize ALL installed servos.
-        //extend  = hwMap.get(Servo.class, "servo1");
-        //grabber = hwMap.get(Servo.class, "servo2");
-        //color_arm = hwMap.get(Servo.class, "servo3");
-        //extend.setPosition(.2);
-        //grabber.setPosition(.56);
-        //color_arm.setPosition(1);
+        extend  = hwMap.get(Servo.class, "servo1");
+        grabber = hwMap.get(Servo.class, "servo2");
+        color_arm = hwMap.get(Servo.class, "servo3");
+
+        colorSensor = hwMap.get(ColorSensor.class, "color1");
+        extend.setPosition(.2);
+        grabber.setPosition(.41);
+        color_arm.setPosition(.9);
     }
  }
 

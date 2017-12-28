@@ -52,7 +52,7 @@ public class mecanumUno extends OpMode {
         color_arm = hardwareMap.get(Servo.class,"servo3");
         extend.setPosition(.2);
         grabber.setPosition(.41);
-        color_arm.setPosition(0);
+        color_arm.setPosition(.90);
 
     }
 
@@ -163,14 +163,14 @@ public class mecanumUno extends OpMode {
             }
         }
         //Cs
-        if (color_arm.getPosition() == 0) {
+        if (color_arm.getPosition() == .90) {
             if (gamepad2.dpad_up) {
-                color_arm.setPosition(1);
+                color_arm.setPosition(.17);
             }
         }
-        if (color_arm.getPosition() == 1) {
+        if (color_arm.getPosition() == .17) {
             if (gamepad2.dpad_down) {
-                color_arm.setPosition(0);
+                color_arm.setPosition(.90);
             }
         }
 

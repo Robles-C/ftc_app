@@ -80,6 +80,7 @@ public class AutoUno extends LinearOpMode {
         telemetry.addData("Path0",  "Starting at %7d :%7d",
                           robot.lf.getCurrentPosition(),
                           robot.rf.getCurrentPosition());
+        robot.colorSensor.enableLed(true);
         telemetry.update();
 
         // Wait for the game to start (driver presses PLAY)
@@ -90,7 +91,9 @@ public class AutoUno extends LinearOpMode {
         //encoderDrive(TURN_SPEED,   12, -12, 4.0);
         //encoderDrive(DRIVE_SPEED, -6, -6, 4.0);
         //encoderStrafe(STRAFE_SPEED, -6, 6, 6, -6, 4.0);
-        //encoderStrafe(STRAFE_SPEED, -5, 5, 5,-5, 10.0);
+        encoderStrafe(STRAFE_SPEED, -5, 5, 5,-5, 10.0);
+        armDown(3);
+        jewel(3);
         encoderDrive(DRIVE_SPEED,-25,-25,15);
 
 
@@ -242,6 +245,33 @@ public class AutoUno extends LinearOpMode {
             robot.rb.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
             sleep(250);   // optional pause after each move
+        }
+    }
+    //blue side
+    public void jewel(double holdTime){
+        ElapsedTime holdTimer = new ElapsedTime();
+        holdTimer.reset();
+        while (opModeIsActive() && holdTimer.time() < holdTime) {
+            if (robot.colorSensor.blue() > 3) {
+                encoderDrive(TURN_SPEED, 0, 3.5, 2.0);
+                encoderDrive(TURN_SPEED, 0, -3.5, 2.0);
+                robot.color_arm.setPosition(0.0);
+            } else {
+                encoderDrive(TURN_SPEED, 0, -3.5, 2.0);
+                encoderDrive(TURN_SPEED, 0, 3.5, 2.0);
+                robot.color_arm.setPosition(0.0);
+            }
+            robot.lf.setPower(0);
+            robot.rb.setPower(0);
+            robot.rf.setPower(0);
+            robot.lb.setPower(0);
+        }
+    }
+    public void armDown(double holdTime) {
+        ElapsedTime holdTimer = new ElapsedTime();
+        holdTimer.reset();
+        while (opModeIsActive() && holdTimer.time() < holdTime) {
+            robot.color_arm.setPosition(1.0);
         }
     }
 }
