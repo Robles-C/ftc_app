@@ -74,7 +74,7 @@ public class HardwareRobespierre
         colorSensor = hwMap.get(ColorSensor.class, "color1");
         extend.setPosition(.2);
         grabber.setPosition(.41);
-        color_arm.setPosition(.9);
+        color_arm.setPosition(.95);
     }
  }
 

@@ -1,32 +1,24 @@
 package org.firstinspires.ftc.teamcode.Autonomous;
 
 import com.qualcomm.robotcore.eventloop.opmode.Autonomous;
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-import com.qualcomm.robotcore.hardware.ColorSensor;
 import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.util.ElapsedTime;
 
-import org.firstinspires.ftc.robotcontroller.external.samples.ConceptVuforiaNavigation;
 import org.firstinspires.ftc.robotcore.external.ClassFactory;
 import org.firstinspires.ftc.robotcore.external.matrices.OpenGLMatrix;
-import org.firstinspires.ftc.robotcore.external.matrices.VectorF;
-import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
-import org.firstinspires.ftc.robotcore.external.navigation.AxesOrder;
-import org.firstinspires.ftc.robotcore.external.navigation.AxesReference;
-import org.firstinspires.ftc.robotcore.external.navigation.Orientation;
 import org.firstinspires.ftc.robotcore.external.navigation.RelicRecoveryVuMark;
-import org.firstinspires.ftc.robotcore.external.navigation.VuMarkInstanceId;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaLocalizer;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackable;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackableDefaultListener;
 import org.firstinspires.ftc.robotcore.external.navigation.VuforiaTrackables;
+import org.firstinspires.ftc.teamcode.Autonomous.HardwareRobespierre;
 
 /**
  * Created by Cristian on 11/10/17.
  */
 
-@Autonomous(name="AutoBlueClose", group ="AutoRed")
+@Autonomous(name="AutoRedClose", group ="AutoRed")
 
 public class AutoRedClose extends LinearOpMode {
 
@@ -43,6 +35,7 @@ public class AutoRedClose extends LinearOpMode {
     static final double     DRIVE_SPEED             = 0.39;
     static final double     TURN_SPEED              = 0.5;
     static final double     STRAFE_SPEED            = 0.25;
+    static final double     JEWEL_SPEED             = 0.20;
 
     public static final String TAG = "Vuforia VuMark Sample";
 
@@ -50,21 +43,6 @@ public class AutoRedClose extends LinearOpMode {
     VuforiaLocalizer vuforia;
 
     @Override public void runOpMode() {
-        //color_sensor = hardwareMap.colorSensor.get("color");
-        //color_sensor.enableLed(true);
-
-        //color_sensor.red();   // Red channel value
-        //color_sensor.green(); // Green channel value
-        //color_sensor.blue();  // Blue channel value
-
-        //color_sensor.alpha(); // Total luminosity
-        //color_sensor.argb();  // Combined color value
-
-        //telemetry.addData("Red:", color_sensor.red());
-        //telemetry.addData("Blue:", color_sensor.green());
-        //telemetry.addData("Green:", color_sensor.blue());
-        //telemetry.addData("Alpha:", color_sensor.alpha());
-        //telemetry.addData("ARGB:", color_sensor.argb());
 
         robot.init(hardwareMap);
 
@@ -124,7 +102,15 @@ public class AutoRedClose extends LinearOpMode {
                 if (pose != null) {
                     telemetry.addData("VuMark", "%s visible", vuMark);
                     if(vuMark == RelicRecoveryVuMark.LEFT){
-                        encoderDrive(DRIVE_SPEED,-25,-25,15);
+                        resetEnc();
+                        lowerArm();
+                        sleep(3500);
+                        jewel(2.5);
+                        sleep(100);
+                        raiseArm();
+                        sleep(300);
+                        resetEnc();
+                        encoderDrive(DRIVE_SPEED,39,39,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
                         robot.extend.setPosition(.9);
@@ -132,6 +118,8 @@ public class AutoRedClose extends LinearOpMode {
                         encoderDrive(DRIVE_SPEED,5,5,3);
                         sleep(200);
                         robot.grabber.setPosition(.15);
+                        sleep(200);
+                        resetEnc();
                         sleep(200);
                         encoderDrive(DRIVE_SPEED, -6,-6,2);
                         sleep(200);
@@ -142,7 +130,15 @@ public class AutoRedClose extends LinearOpMode {
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.CENTER){
-                        encoderDrive(DRIVE_SPEED,-31.5,-31.5,15);
+                        resetEnc();
+                        lowerArm();
+                        sleep(3500);
+                        jewel(2.5);
+                        sleep(100);
+                        raiseArm();
+                        sleep(300);
+                        resetEnc();
+                        encoderDrive(DRIVE_SPEED,31.5,31.5,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
                         robot.extend.setPosition(.9);
@@ -150,6 +146,8 @@ public class AutoRedClose extends LinearOpMode {
                         encoderDrive(DRIVE_SPEED,5,5,3);
                         sleep(200);
                         robot.grabber.setPosition(.15);
+                        sleep(200);
+                        resetEnc();
                         sleep(200);
                         encoderDrive(DRIVE_SPEED, -6,-6,2);
                         sleep(200);
@@ -160,7 +158,15 @@ public class AutoRedClose extends LinearOpMode {
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.RIGHT){
-                        encoderDrive(DRIVE_SPEED,-39,-39,15);
+                        resetEnc();
+                        lowerArm();
+                        sleep(3500);
+                        jewel(2.5);
+                        sleep(100);
+                        raiseArm();
+                        sleep(300);
+                        resetEnc();
+                        encoderDrive(DRIVE_SPEED,25,25,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
                         robot.extend.setPosition(.9);
@@ -168,6 +174,8 @@ public class AutoRedClose extends LinearOpMode {
                         encoderDrive(DRIVE_SPEED,5,5,3);
                         sleep(200);
                         robot.grabber.setPosition(.15);
+                        sleep(200);
+                        resetEnc();
                         sleep(200);
                         encoderDrive(DRIVE_SPEED, -6,-6,2);
                         sleep(200);
@@ -177,7 +185,6 @@ public class AutoRedClose extends LinearOpMode {
                         sleep(500);
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
-
                     }
                 }
             }
@@ -249,6 +256,8 @@ public class AutoRedClose extends LinearOpMode {
             robot.lb.setPower(0);
             robot.rb.setPower(0);
 
+            resetEnc();
+
             // Turn off RUN_TO_POSITION
             robot.lf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             robot.rf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -276,17 +285,15 @@ public class AutoRedClose extends LinearOpMode {
             robot.rb.setMode(DcMotor.RunMode.RUN_TO_POSITION);
 
             // Determine new target position, and pass to motor controller
-            newLfTarget = robot.lf.getCurrentPosition() + (int)(lfInches * COUNTS_PER_INCH);
-            newRfTarget = robot.rf.getCurrentPosition() + (int)(rfInches * COUNTS_PER_INCH);
-            newLbTarget = robot.lb.getCurrentPosition() + (int)(lbInches * COUNTS_PER_INCH);
-            newRbTarget = robot.rb.getCurrentPosition() + (int)(rbInches * COUNTS_PER_INCH);
+            newLfTarget = robot.lf.getCurrentPosition() + (int) (lfInches * COUNTS_PER_INCH);
+            newRfTarget = robot.rf.getCurrentPosition() + (int) (rfInches * COUNTS_PER_INCH);
+            newLbTarget = robot.lb.getCurrentPosition() + (int) (lbInches * COUNTS_PER_INCH);
+            newRbTarget = robot.rb.getCurrentPosition() + (int) (rbInches * COUNTS_PER_INCH);
 
             robot.lf.setTargetPosition(newLfTarget);
             robot.lb.setTargetPosition(newLbTarget);
             robot.rf.setTargetPosition(newRfTarget);
             robot.rb.setTargetPosition(newRbTarget);
-
-
 
 
             // reset the timeout time and start motion.
@@ -308,8 +315,8 @@ public class AutoRedClose extends LinearOpMode {
                             && robot.lb.isBusy() && robot.rb.isBusy())) {
 
                 // Display it for the driver.
-                telemetry.addData("Path1",  "Running to %7d :%7d", newLfTarget,  newRfTarget);
-                telemetry.addData("Path2",  "Running at %7d :%7d",
+                telemetry.addData("Path1", "Running to %7d :%7d", newLfTarget, newRfTarget);
+                telemetry.addData("Path2", "Running at %7d :%7d",
                         robot.lf.getCurrentPosition(),
                         robot.rf.getCurrentPosition());
                 telemetry.update();
@@ -321,6 +328,8 @@ public class AutoRedClose extends LinearOpMode {
             robot.lb.setPower(0);
             robot.rb.setPower(0);
 
+            resetEnc();
+
             // Turn off RUN_TO_POSITION
             robot.lf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             robot.rf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -330,4 +339,52 @@ public class AutoRedClose extends LinearOpMode {
             sleep(250);   // optional pause after each move
         }
     }
+        public void raiseArm(){
+            robot.color_arm.setPosition(.35);
+            sleep(150);
+            robot.color_arm.setPosition(.45);
+            sleep(150);
+            robot.color_arm.setPosition(.55);
+            sleep(150);
+            robot.color_arm.setPosition(.65);
+            sleep(150);
+            robot.color_arm.setPosition(.85);
+            sleep(150);
+        }
+        public void lowerArm(){
+            robot.color_arm.setPosition(.9);
+            sleep(150);
+            robot.color_arm.setPosition(.80);
+            sleep(150);
+            robot.color_arm.setPosition(.50);
+            sleep(150);
+            robot.color_arm.setPosition(.35);
+            sleep(150);
+            robot.color_arm.setPosition(.19);
+            sleep(150);
+        }
+        public void resetEnc(){
+            robot.lf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            robot.lb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            robot.rf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            robot.rb.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
+            sleep(169);
+        }
+        public void jewel(double holdTime){
+            ElapsedTime holdTimer = new ElapsedTime();
+            holdTimer.reset();
+            while (opModeIsActive() && holdTimer.time() < holdTime) {
+                if (robot.colorSensor.blue() > 2) {
+                    encoderDrive(JEWEL_SPEED, 3, -3, 2.0);
+                    encoderDrive(JEWEL_SPEED, -3, 3, 2.0);
+                } else{
+                        encoderDrive(JEWEL_SPEED, -3, 3, 2.0);
+                        encoderDrive(JEWEL_SPEED, 3, -3, 2.0);
+                }
+                robot.lb.setPower(0);
+                robot.lf.setPower(0);
+                robot.rf.setPower(0);
+                robot.rb.setPower(0);
+            }
+        }
 }
