@@ -1,15 +1,11 @@
 [
     {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/app_settings.xml",
-        "source": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/bundles/debug/res/xml/app_settings.xml"
+        "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/app_settings.xml",
+        "source": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/bundles/debug/res/xml/app_settings.xml"
     },
     {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/device_filter.xml",
-        "source": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/bundles/debug/res/xml/device_filter.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/rev_scoot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/5c462a3d57a5c16b408284293984b35cd433506f/output/res/xml/rev_scoot.xml"
+        "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/pushbot.xml",
+        "source": "/Users/FTC6570/.android/build-cache/05c2ccb928686c1de0da95b7b7a182311f72e4b7/output/res/xml/pushbot.xml"
     },
     {
         "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/device_filter.xml",
@@ -17,106 +13,30 @@
     },
     {
         "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/rev_scoot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/cfc8c88daf050c44510be770984bde658b915735/output/res/xml/rev_scoot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/pushbotsens.xml",
-        "source": "/Users/FTC6570/.android/build-cache/2766c0eabeb9d2ab39e69dbb8df581181b0f8364/output/res/xml/pushbotsens.xml"
+        "source": "/Users/FTC6570/.android/build-cache/05c2ccb928686c1de0da95b7b7a182311f72e4b7/output/res/xml/rev_scoot.xml"
     },
     {
         "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/advanced_rc_settings.xml",
-        "source": "/Users/FTC6570/.android/build-cache/cfc8c88daf050c44510be770984bde658b915735/output/res/xml/advanced_rc_settings.xml"
+        "source": "/Users/FTC6570/.android/build-cache/05c2ccb928686c1de0da95b7b7a182311f72e4b7/output/res/xml/advanced_rc_settings.xml"
     },
     {
         "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/squarebot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/cfc8c88daf050c44510be770984bde658b915735/output/res/xml/squarebot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/k9legacybot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/2766c0eabeb9d2ab39e69dbb8df581181b0f8364/output/res/xml/k9legacybot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/k9usbbot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/2766c0eabeb9d2ab39e69dbb8df581181b0f8364/output/res/xml/k9usbbot.xml"
+        "source": "/Users/FTC6570/.android/build-cache/05c2ccb928686c1de0da95b7b7a182311f72e4b7/output/res/xml/squarebot.xml"
     },
     {
         "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/pushbotsens.xml",
-        "source": "/Users/FTC6570/.android/build-cache/cfc8c88daf050c44510be770984bde658b915735/output/res/xml/pushbotsens.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/device_filter.xml",
-        "source": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/bundles/debug/res/xml/device_filter.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/rev_scoot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/2766c0eabeb9d2ab39e69dbb8df581181b0f8364/output/res/xml/rev_scoot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/pushbotsens.xml",
-        "source": "/Users/FTC6570/.android/build-cache/5c462a3d57a5c16b408284293984b35cd433506f/output/res/xml/pushbotsens.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/squarebot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/2766c0eabeb9d2ab39e69dbb8df581181b0f8364/output/res/xml/squarebot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/app_settings.xml",
-        "source": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/bundles/debug/res/xml/app_settings.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/pushbot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/cfc8c88daf050c44510be770984bde658b915735/output/res/xml/pushbot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/app_settings.xml",
-        "source": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/bundles/debug/res/xml/app_settings.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/k9usbbot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/5c462a3d57a5c16b408284293984b35cd433506f/output/res/xml/k9usbbot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/pushbot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/2766c0eabeb9d2ab39e69dbb8df581181b0f8364/output/res/xml/pushbot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/advanced_rc_settings.xml",
-        "source": "/Users/FTC6570/.android/build-cache/2766c0eabeb9d2ab39e69dbb8df581181b0f8364/output/res/xml/advanced_rc_settings.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/maxmodules.xml",
-        "source": "/Users/FTC6570/.android/build-cache/5c462a3d57a5c16b408284293984b35cd433506f/output/res/xml/maxmodules.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/pushbot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/5c462a3d57a5c16b408284293984b35cd433506f/output/res/xml/pushbot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/squarebot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/5c462a3d57a5c16b408284293984b35cd433506f/output/res/xml/squarebot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app6570/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/maxmodules.xml",
-        "source": "/Users/FTC6570/.android/build-cache/2766c0eabeb9d2ab39e69dbb8df581181b0f8364/output/res/xml/maxmodules.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/advanced_rc_settings.xml",
-        "source": "/Users/FTC6570/.android/build-cache/5c462a3d57a5c16b408284293984b35cd433506f/output/res/xml/advanced_rc_settings.xml"
+        "source": "/Users/FTC6570/.android/build-cache/05c2ccb928686c1de0da95b7b7a182311f72e4b7/output/res/xml/pushbotsens.xml"
     },
     {
         "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/k9legacybot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/cfc8c88daf050c44510be770984bde658b915735/output/res/xml/k9legacybot.xml"
+        "source": "/Users/FTC6570/.android/build-cache/05c2ccb928686c1de0da95b7b7a182311f72e4b7/output/res/xml/k9legacybot.xml"
     },
     {
         "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/k9usbbot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/cfc8c88daf050c44510be770984bde658b915735/output/res/xml/k9usbbot.xml"
-    },
-    {
-        "merged": "/Users/FTC6570/Documents/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/k9legacybot.xml",
-        "source": "/Users/FTC6570/.android/build-cache/5c462a3d57a5c16b408284293984b35cd433506f/output/res/xml/k9legacybot.xml"
+        "source": "/Users/FTC6570/.android/build-cache/05c2ccb928686c1de0da95b7b7a182311f72e4b7/output/res/xml/k9usbbot.xml"
     },
     {
         "merged": "/Users/FTC6570/Documents/GitHub/ftc_app/FtcRobotController/build/intermediates/res/merged/androidTest/debug/xml/maxmodules.xml",
-        "source": "/Users/FTC6570/.android/build-cache/cfc8c88daf050c44510be770984bde658b915735/output/res/xml/maxmodules.xml"
+        "source": "/Users/FTC6570/.android/build-cache/05c2ccb928686c1de0da95b7b7a182311f72e4b7/output/res/xml/maxmodules.xml"
     }
 ]
