@@ -170,7 +170,7 @@ public class mecanumUno extends OpMode {
         }
         /*Lift Motor*/
         liftPower = gamepad2.left_stick_y;
-        lift.setPower(liftPower/-1.9);
+        lift.setPower(liftPower/-1.7);
 
     }
 }
