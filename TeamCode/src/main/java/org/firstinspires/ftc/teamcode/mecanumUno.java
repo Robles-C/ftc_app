@@ -30,6 +30,7 @@ public class mecanumUno extends OpMode {
     Servo extend = null;
     Servo grabber = null;
     Servo color_arm = null;
+    Servo j_arm = null;
     boolean turbo = false;
 
     double v1 = 0;
@@ -50,9 +51,11 @@ public class mecanumUno extends OpMode {
         extend = hardwareMap.get(Servo.class, "servo1");
         grabber = hardwareMap.get(Servo.class, "servo2");
         color_arm = hardwareMap.get(Servo.class,"servo3");
-        extend.setPosition(.34);
+        j_arm = hardwareMap.get(Servo.class,"servo4");
+        extend.setPosition(.2);
         grabber.setPosition(.44);
         color_arm.setPosition(.85);
+        j_arm.setPosition(0);
     }
 
     @Override
@@ -83,6 +86,7 @@ public class mecanumUno extends OpMode {
     public void go() {
         /*Turbo*/
         if(!turbo){
+            telemetry.addLine("T Off");
             if(gamepad1.right_bumper){
                 turbo = true;
                 telemetry.addLine("T On");
@@ -90,6 +94,8 @@ public class mecanumUno extends OpMode {
             }
         }
         if(turbo){
+
+            telemetry.addLine("T On");
             if(gamepad1.right_bumper){
                 turbo = false;
                 telemetry.addLine("T Off");
@@ -132,12 +138,12 @@ public class mecanumUno extends OpMode {
             rightTwo.setPower(.5);
             leftTwo.setPower(-.5);
         }else {
-            if(turbo == false) {
+            if(!turbo) {
                 rightOne.setPower(v1);
                 leftOne.setPower(v2);
                 rightTwo.setPower(v3);
                 leftTwo.setPower(v4);
-            }else if(turbo == true){
+            }else if(turbo){
                 rightOne.setPower((v1 * 1) + .2);
                 leftOne.setPower((v2 * 1) + .2);
                 rightTwo.setPower((v3 * 1) + .2);
@@ -147,17 +153,16 @@ public class mecanumUno extends OpMode {
 
 
         /*Extend Servos*/
-        if (extend.getPosition() == .3) {
+        if (extend.getPosition() == .2) {
             if (gamepad2.left_bumper) {
-                extend.setPosition(.86);
+                extend.setPosition(.9);
             }
         }
-        if(extend.getPosition() == .86) {
+        if(extend.getPosition() == .9) {
             if (gamepad2.right_bumper) {
-                extend.setPosition(.30);
+                extend.setPosition(.20);
             }
         }
-        //hello
         /*Grabbers*/
         if(grabber.getPosition() == .44) {
             if (gamepad2.y) {

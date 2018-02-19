@@ -119,7 +119,7 @@ public class AutoRedFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.34);
+                        robot.extend.setPosition(.2);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
                         stop();
@@ -137,7 +137,7 @@ public class AutoRedFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.34);
+                        robot.extend.setPosition(.2);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
                         stop();
@@ -155,7 +155,7 @@ public class AutoRedFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.34);
+                        robot.extend.setPosition(.2);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
                         stop();

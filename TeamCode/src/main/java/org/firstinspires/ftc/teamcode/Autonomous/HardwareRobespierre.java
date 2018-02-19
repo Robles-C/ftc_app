@@ -21,6 +21,7 @@ public class HardwareRobespierre
     public Servo extend = null;
     public Servo grabber = null;
     public Servo color_arm = null;
+    public Servo j_arm = null;
 
     public ColorSensor colorSensor = null;
 
@@ -70,11 +71,13 @@ public class HardwareRobespierre
         extend  = hwMap.get(Servo.class, "servo1");
         grabber = hwMap.get(Servo.class, "servo2");
         color_arm = hwMap.get(Servo.class, "servo3");
+        j_arm = hwMap.get(Servo.class, "servo4");
 
         colorSensor = hwMap.get(ColorSensor.class, "color1");
-        extend.setPosition(.34);
+        extend.setPosition(.2);
         grabber.setPosition(.46);
         color_arm.setPosition(.95);
+        j_arm.setPosition(0);
     }
  }
 

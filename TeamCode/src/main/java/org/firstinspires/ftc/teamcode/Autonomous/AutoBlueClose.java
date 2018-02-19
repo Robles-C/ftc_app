@@ -104,7 +104,7 @@ public class AutoBlueClose extends LinearOpMode {
                         encoderDrive(DRIVE_SPEED,-25,-25,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
-                        robot.extend.setPosition(.86);
+                        robot.extend.setPosition(.9);
                         sleep(200);
                         encoderDrive(DRIVE_SPEED,2.5,2.5,3);
                         sleep(200);
@@ -114,7 +114,7 @@ public class AutoBlueClose extends LinearOpMode {
                         sleep(200);
                         robot.grabber.setPosition(.41);
                         sleep(1000);
-                        robot.extend.setPosition(.34);
+                        robot.extend.setPosition(.2);
                         sleep(500);
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
@@ -123,7 +123,7 @@ public class AutoBlueClose extends LinearOpMode {
                         encoderDrive(DRIVE_SPEED,-31.5,-31.5,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
-                        robot.extend.setPosition(.86);
+                        robot.extend.setPosition(.9);
                         sleep(200);
                         encoderDrive(DRIVE_SPEED,2.5,2.5,3);
                         sleep(200);
@@ -133,7 +133,7 @@ public class AutoBlueClose extends LinearOpMode {
                         sleep(200);
                         robot.grabber.setPosition(.41);
                         sleep(1000);
-                        robot.extend.setPosition(.34);
+                        robot.extend.setPosition(.2);
                         sleep(500);
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
@@ -142,7 +142,7 @@ public class AutoBlueClose extends LinearOpMode {
                         encoderDrive(DRIVE_SPEED,-39,-39,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
-                        robot.extend.setPosition(.86);
+                        robot.extend.setPosition(.9);
                         sleep(200);
                         encoderDrive(DRIVE_SPEED,2.5,2.5,3);
                         sleep(200);
@@ -152,7 +152,7 @@ public class AutoBlueClose extends LinearOpMode {
                         sleep(200);
                         robot.grabber.setPosition(.41);
                         sleep(1000);
-                        robot.extend.setPosition(.34);
+                        robot.extend.setPosition(.2);
                         sleep(500);
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
