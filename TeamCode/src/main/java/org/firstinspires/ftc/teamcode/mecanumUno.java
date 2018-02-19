@@ -157,6 +157,7 @@ public class mecanumUno extends OpMode {
                 extend.setPosition(.30);
             }
         }
+        //hello
         /*Grabbers*/
         if(grabber.getPosition() == .44) {
             if (gamepad2.y) {
