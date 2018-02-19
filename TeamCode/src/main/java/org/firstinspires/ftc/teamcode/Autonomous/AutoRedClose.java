@@ -32,9 +32,9 @@ public class AutoRedClose extends LinearOpMode {
     static final double     WHEEL_DIAMETER_INCHES   = 4.0;     // For figuring circumference
     static final double     COUNTS_PER_INCH         = ((COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
             (WHEEL_DIAMETER_INCHES * 3.1415));
-    static final double     DRIVE_SPEED             = 0.39;
+    static final double     DRIVE_SPEED             = 0.85;
     static final double     TURN_SPEED              = 0.5;
-    static final double     STRAFE_SPEED            = 0.25;
+    static final double     STRAFE_SPEED            = 0.4;
     static final double     JEWEL_SPEED             = 0.20;
 
     public static final String TAG = "Vuforia VuMark Sample";
@@ -103,19 +103,12 @@ public class AutoRedClose extends LinearOpMode {
                     telemetry.addData("VuMark", "%s visible", vuMark);
                     if(vuMark == RelicRecoveryVuMark.LEFT){
                         resetEnc();
-                        lowerArm();
-                        sleep(3500);
-                        jewel(2.5);
-                        sleep(100);
-                        raiseArm();
-                        sleep(300);
-                        resetEnc();
                         encoderDrive(DRIVE_SPEED,39,39,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(200);
-                        encoderDrive(DRIVE_SPEED,5,5,3);
+                        encoderDrive(DRIVE_SPEED,2.5,2.5,3);
                         sleep(200);
                         robot.grabber.setPosition(.15);
                         sleep(200);
@@ -125,25 +118,18 @@ public class AutoRedClose extends LinearOpMode {
                         sleep(200);
                         robot.grabber.setPosition(.41);
                         sleep(1000);
-                        robot.extend.setPosition(.20);
+                        robot.extend.setPosition(.34);
                         sleep(500);
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.CENTER){
                         resetEnc();
-                        lowerArm();
-                        sleep(3500);
-                        jewel(2.5);
-                        sleep(100);
-                        raiseArm();
-                        sleep(300);
-                        resetEnc();
                         encoderDrive(DRIVE_SPEED,31.5,31.5,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(200);
-                        encoderDrive(DRIVE_SPEED,5,5,3);
+                        encoderDrive(DRIVE_SPEED,2.5,2.5,3);
                         sleep(200);
                         robot.grabber.setPosition(.15);
                         sleep(200);
@@ -153,25 +139,18 @@ public class AutoRedClose extends LinearOpMode {
                         sleep(200);
                         robot.grabber.setPosition(.41);
                         sleep(1000);
-                        robot.extend.setPosition(.20);
+                        robot.extend.setPosition(.34);
                         sleep(500);
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.RIGHT){
                         resetEnc();
-                        lowerArm();
-                        sleep(3500);
-                        jewel(2.5);
-                        sleep(100);
-                        raiseArm();
-                        sleep(300);
-                        resetEnc();
                         encoderDrive(DRIVE_SPEED,25,25,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(200);
-                        encoderDrive(DRIVE_SPEED,5,5,3);
+                        encoderDrive(DRIVE_SPEED,2.5,2.5,3);
                         sleep(200);
                         robot.grabber.setPosition(.15);
                         sleep(200);
@@ -181,7 +160,7 @@ public class AutoRedClose extends LinearOpMode {
                         sleep(200);
                         robot.grabber.setPosition(.41);
                         sleep(1000);
-                        robot.extend.setPosition(.20);
+                        robot.extend.setPosition(.34);
                         sleep(500);
                         encoderDrive(DRIVE_SPEED, 6,6,2);
                         stop();
@@ -353,14 +332,10 @@ public class AutoRedClose extends LinearOpMode {
         }
         public void lowerArm(){
             robot.color_arm.setPosition(.9);
+            sleep(650);
+            robot.color_arm.setPosition(.70);
             sleep(150);
-            robot.color_arm.setPosition(.80);
-            sleep(150);
-            robot.color_arm.setPosition(.50);
-            sleep(150);
-            robot.color_arm.setPosition(.35);
-            sleep(150);
-            robot.color_arm.setPosition(.19);
+            robot.color_arm.setPosition(.33);
             sleep(150);
         }
         public void resetEnc(){

@@ -41,11 +41,10 @@ public class AutoBlueFar extends LinearOpMode {
     static final double     WHEEL_DIAMETER_INCHES   = 4.0;     // For figuring circumference
     static final double     COUNTS_PER_INCH         = ((COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
             (WHEEL_DIAMETER_INCHES * 3.1415));
-    static final double     DRIVE_SPEED             = 0.39;
+    static final double     DRIVE_SPEED             = 0.85;
     static final double     TURN_SPEED              = 0.5;
-    static final double     STRAFE_SPEED            = 0.25;
-
-    static final double     JEWEL_SPEED             = 0.20;
+    static final double     STRAFE_SPEED            = 0.4;
+    static final double     JEWEL_SPEED             = 0.2;
 
     public static final String TAG = "Vuforia VuMark Sample";
 
@@ -53,21 +52,6 @@ public class AutoBlueFar extends LinearOpMode {
     VuforiaLocalizer vuforia;
 
     @Override public void runOpMode() {
-        //color_sensor = hardwareMap.colorSensor.get("color");
-        //color_sensor.enableLed(true);
-
-        //color_sensor.red();   // Red channel value
-        //color_sensor.green(); // Green channel value
-        //color_sensor.blue();  // Blue channel value
-
-        //color_sensor.alpha(); // Total luminosity
-        //color_sensor.argb();  // Combined color value
-
-        //telemetry.addData("Red:", color_sensor.red());
-        //telemetry.addData("Blue:", color_sensor.green());
-        //telemetry.addData("Green:", color_sensor.blue());
-        //telemetry.addData("Alpha:", color_sensor.alpha());
-        //telemetry.addData("ARGB:", color_sensor.argb());
 
         robot.init(hardwareMap);
 
@@ -127,19 +111,15 @@ public class AutoBlueFar extends LinearOpMode {
                 if (pose != null) {
                     telemetry.addData("VuMark", "%s visible", vuMark);
                     if(vuMark == RelicRecoveryVuMark.LEFT){
-                        lowerArm();
-                        sleep(3000);
-                        jewel(2.5);
-                        sleep(100);
                         encoderDrive(DRIVE_SPEED,-20,-20,4);
                         sleep(100);
                         encoderDrive(1,37,-37,5);
                         sleep(100);
-                        encoderStrafe(STRAFE_SPEED, -6.5,6.5,6.5,-6.5,6);
+                        encoderStrafe(STRAFE_SPEED, 6.5,-6.5,-6.5,6.5,6);
                         sleep(250);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(250);
-                        encoderDrive(DRIVE_SPEED,2,2,2);
+                        encoderDrive(DRIVE_SPEED,5,5,2);
                         sleep(250);
                         robot.grabber.setPosition(.15);
                         sleep(250);
@@ -147,24 +127,20 @@ public class AutoBlueFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.2);
+                        robot.extend.setPosition(.34);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.CENTER){
-                        lowerArm();
-                        sleep(3000);
-                        jewel(2.5);
-                        sleep(100);
                         encoderDrive(DRIVE_SPEED,-20,-20,4);
                         sleep(100);
                         encoderDrive(1,37,-37,5);
                         sleep(100);
-                        encoderStrafe(STRAFE_SPEED, -21.5,21.5,21.5,-21.5,6);
+                        encoderStrafe(STRAFE_SPEED, 14,-14,-14,14,6);
                         sleep(250);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(250);
-                        encoderDrive(DRIVE_SPEED,2,2,2);
+                        encoderDrive(DRIVE_SPEED,5,5,2);
                         sleep(250);
                         robot.grabber.setPosition(.15);
                         sleep(250);
@@ -172,24 +148,20 @@ public class AutoBlueFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.2);
+                        robot.extend.setPosition(.34);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.RIGHT){
-                        lowerArm();
-                        sleep(3000);
-                        jewel(2.5);
-                        sleep(100);
                         encoderDrive(DRIVE_SPEED,-20,-20,4);
                         sleep(100);
                         encoderDrive(1,37,-37,5);
                         sleep(100);
-                        encoderStrafe(STRAFE_SPEED, -21.5,21.5,21.5,-21.5,6);
+                        encoderStrafe(STRAFE_SPEED, 2.5,-21.5,-21.5,21.5,6);
                         sleep(250);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(250);
-                        encoderDrive(DRIVE_SPEED,2,2,2);
+                        encoderDrive(DRIVE_SPEED,5,5,2);
                         sleep(250);
                         robot.grabber.setPosition(.15);
                         sleep(250);
@@ -197,7 +169,7 @@ public class AutoBlueFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.2);
+                        robot.extend.setPosition(.34);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
                         stop();
@@ -271,6 +243,8 @@ public class AutoBlueFar extends LinearOpMode {
             robot.lb.setPower(0);
             robot.rb.setPower(0);
 
+            resetEnc();
+
             // Turn off RUN_TO_POSITION
             robot.lf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             robot.rf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -343,6 +317,8 @@ public class AutoBlueFar extends LinearOpMode {
             robot.lb.setPower(0);
             robot.rb.setPower(0);
 
+            resetEnc();
+
             // Turn off RUN_TO_POSITION
             robot.lf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
             robot.rf.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
@@ -366,10 +342,10 @@ public class AutoBlueFar extends LinearOpMode {
     }
     public void lowerArm(){
         robot.color_arm.setPosition(.9);
-        sleep(150);
+        sleep(650);
         robot.color_arm.setPosition(.7);
         sleep(150);
-        robot.color_arm.setPosition(.25);
+        robot.color_arm.setPosition(.33);
         sleep(150);
     }
     public void resetEnc(){
@@ -386,9 +362,11 @@ public class AutoBlueFar extends LinearOpMode {
             if (robot.colorSensor.blue() > 2) {
                 encoderDrive(JEWEL_SPEED, -3, 3, 2.0);
                 encoderDrive(JEWEL_SPEED, 3, -3, 2.0);
+                raiseArm();
             } else {
                 encoderDrive(JEWEL_SPEED, 3, -3, 2.0);
                 encoderDrive(JEWEL_SPEED, -3, 3, 2.0);
+                raiseArm();
             }
             robot.lb.setPower(0);
             robot.lf.setPower(0);

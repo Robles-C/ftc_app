@@ -38,9 +38,9 @@ public class AutoRedFar extends LinearOpMode {
     static final double     WHEEL_DIAMETER_INCHES   = 4.0;
     static final double     COUNTS_PER_INCH         = ((COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
             (WHEEL_DIAMETER_INCHES * 3.1415));
-    static final double     DRIVE_SPEED             = 0.39;
+    static final double     DRIVE_SPEED             = 0.85;
     static final double     TURN_SPEED              = 0.5;
-    static final double     STRAFE_SPEED            = 0.25;
+    static final double     STRAFE_SPEED            = 0.4;
     static final double     JEWEL_SPEED             = 0.20;
 
     public static final String TAG = "Vuforia VuMark Sample";
@@ -106,16 +106,12 @@ public class AutoRedFar extends LinearOpMode {
                 if (pose != null) {
                     telemetry.addData("VuMark", "%s visible", vuMark);
                     if(vuMark == RelicRecoveryVuMark.LEFT){
-                        lowerArm();
-                        sleep(3000);
-                        jewel(2.5);
-                        sleep(100);
                         encoderDrive(DRIVE_SPEED,20,20,4);
                         encoderStrafe(STRAFE_SPEED, -21.5,21.5,21.5,-21.5,6);
                         sleep(250);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(250);
-                        encoderDrive(DRIVE_SPEED,2,2,2);
+                        encoderDrive(DRIVE_SPEED,5,5,2);
                         sleep(250);
                         robot.grabber.setPosition(.15);
                         sleep(250);
@@ -123,21 +119,17 @@ public class AutoRedFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.2);
+                        robot.extend.setPosition(.34);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.CENTER){
-                        lowerArm();
-                        sleep(3000);
-                        jewel(2.5);
-                        sleep(100);
                         encoderDrive(DRIVE_SPEED,20,20,4);
                         encoderStrafe(STRAFE_SPEED, -14,14,14,-14,5);
                         sleep(250);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(250);
-                        encoderDrive(DRIVE_SPEED,2,2,2);
+                        encoderDrive(DRIVE_SPEED,5,5,2);
                         sleep(250);
                         robot.grabber.setPosition(.15);
                         sleep(250);
@@ -145,21 +137,17 @@ public class AutoRedFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.2);
+                        robot.extend.setPosition(.34);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.RIGHT){
-                        lowerArm();
-                        sleep(3000);
-                        jewel(2.5);
-                        sleep(100);
                         encoderDrive(DRIVE_SPEED,20,20,4);
                         encoderStrafe(STRAFE_SPEED, -6.5,6.5,6.5,-6.5,3);
                         sleep(250);
-                        robot.extend.setPosition(.9);
+                        robot.extend.setPosition(.86);
                         sleep(250);
-                        encoderDrive(DRIVE_SPEED,2,2,2);
+                        encoderDrive(DRIVE_SPEED,5,5,2);
                         sleep(250);
                         robot.grabber.setPosition(.15);
                         sleep(250);
@@ -167,10 +155,9 @@ public class AutoRedFar extends LinearOpMode {
                         sleep(250);
                         robot.grabber.setPosition(.41);
                         sleep(250);
-                        robot.extend.setPosition(.2);
+                        robot.extend.setPosition(.34);
                         sleep(250);
                         encoderDrive(DRIVE_SPEED,6,6,4);
-                        stop();
                         stop();
                     }
                 }
@@ -316,10 +303,10 @@ public class AutoRedFar extends LinearOpMode {
     }
     public void lowerArm(){
         robot.color_arm.setPosition(.9);
-        sleep(150);
+        sleep(650);
         robot.color_arm.setPosition(.7);
         sleep(1000);
-        robot.color_arm.setPosition(.25);
+        robot.color_arm.setPosition(.33);
         sleep(150);
     }
     public void resetEnc(){

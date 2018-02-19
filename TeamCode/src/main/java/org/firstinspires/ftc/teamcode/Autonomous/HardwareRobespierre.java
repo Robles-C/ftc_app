@@ -72,8 +72,8 @@ public class HardwareRobespierre
         color_arm = hwMap.get(Servo.class, "servo3");
 
         colorSensor = hwMap.get(ColorSensor.class, "color1");
-        extend.setPosition(.2);
-        grabber.setPosition(.41);
+        extend.setPosition(.34);
+        grabber.setPosition(.46);
         color_arm.setPosition(.95);
     }
  }
