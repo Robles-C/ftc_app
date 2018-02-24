@@ -328,16 +328,11 @@ public class AutoRedClose extends LinearOpMode {
         }
     }
         public void raiseArm(){
-            robot.color_arm.setPosition(.35);
-            sleep(150);
-            robot.color_arm.setPosition(.45);
-            sleep(150);
-            robot.color_arm.setPosition(.55);
-            sleep(150);
-            robot.color_arm.setPosition(.65);
-            sleep(150);
-            robot.color_arm.setPosition(.85);
-            sleep(150);
+            robot.color_arm.setPosition(.9);
+            pointFity();
+        }
+        public void pointFity(){
+            robot.j_arm.setPosition(.985);
         }
         public void lowerArm(){
             robot.j_arm.setPosition(.30);
