@@ -33,7 +33,7 @@ public class AutoRedClose extends LinearOpMode {
     static final double     COUNTS_PER_INCH         = ((COUNTS_PER_MOTOR_REV * DRIVE_GEAR_REDUCTION) /
             (WHEEL_DIAMETER_INCHES * 3.1415));
     static final double     DRIVE_SPEED             = 0.85;
-    static final double     TURN_SPEED              = 0.5;
+    static final double     TURN_SPEED              = 0.8;
     static final double     STRAFE_SPEED            = 0.4;
     static final double     JEWEL_SPEED             = 0.20;
 
@@ -103,6 +103,9 @@ public class AutoRedClose extends LinearOpMode {
                     telemetry.addData("VuMark", "%s visible", vuMark);
                     if(vuMark == RelicRecoveryVuMark.LEFT){
                         resetEnc();
+                        lowerArm();
+                        sleep(500);
+                        raiseArm();
                         encoderDrive(DRIVE_SPEED,39,39,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
@@ -124,6 +127,9 @@ public class AutoRedClose extends LinearOpMode {
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.CENTER){
                         resetEnc();
+                        lowerArm();
+                        sleep(500);
+                        raiseArm();
                         encoderDrive(DRIVE_SPEED,31.5,31.5,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
@@ -145,6 +151,9 @@ public class AutoRedClose extends LinearOpMode {
                         stop();
                     }else if(vuMark == RelicRecoveryVuMark.RIGHT){
                         resetEnc();
+                        lowerArm();
+                        sleep(500);
+                        raiseArm();
                         encoderDrive(DRIVE_SPEED,25,25,15);
                         encoderDrive(TURN_SPEED,-18.5,18.5,10);
                         sleep(200);
@@ -331,12 +340,23 @@ public class AutoRedClose extends LinearOpMode {
             sleep(150);
         }
         public void lowerArm(){
-            robot.color_arm.setPosition(.9);
-            sleep(650);
-            robot.color_arm.setPosition(.70);
-            sleep(150);
-            robot.color_arm.setPosition(.33);
-            sleep(150);
+            robot.j_arm.setPosition(.30);
+            sleep(1000);
+            pointFo();
+            sleep(550);
+            robot.j_arm.setPosition(.16);
+            sleep(100);
+            pointTu();
+            jewel(4);
+            sleep(100);
+
+        }
+        public void pointTu(){
+            robot.color_arm.setPosition(.345);
+        }
+        public void pointFo(){
+            robot.color_arm.setPosition(.40);
+            sleep(100);
         }
         public void resetEnc(){
             robot.lf.setMode(DcMotor.RunMode.STOP_AND_RESET_ENCODER);
@@ -349,12 +369,13 @@ public class AutoRedClose extends LinearOpMode {
             ElapsedTime holdTimer = new ElapsedTime();
             holdTimer.reset();
             while (opModeIsActive() && holdTimer.time() < holdTime) {
+                sleep(1500);
                 if (robot.colorSensor.blue() > 2) {
-                    encoderDrive(JEWEL_SPEED, 3, -3, 2.0);
                     encoderDrive(JEWEL_SPEED, -3, 3, 2.0);
+                    encoderDrive(JEWEL_SPEED, 3, -3, 2.0);
                 } else{
-                        encoderDrive(JEWEL_SPEED, -3, 3, 2.0);
                         encoderDrive(JEWEL_SPEED, 3, -3, 2.0);
+                        encoderDrive(JEWEL_SPEED, -3, 3, 2.0);
                 }
                 robot.lb.setPower(0);
                 robot.lf.setPower(0);

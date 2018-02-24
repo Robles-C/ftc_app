@@ -109,22 +109,23 @@ public class TestHub extends LinearOpMode {
             }
             else {
                 telemetry.addData("VuMark", "not visible");
-                encoderDrive(1,10,10,4);
-                sleep(250);
-                encoderStrafe(1, -10, 10 , 10, -10,5);
-                sleep(250);
-                encoderDrive(1,-10,-10,4);
-                sleep(250);
-                encoderStrafe(1, 10, -10 , -10, 10,5);
-                sleep(250);
-                encoderDrive(1,10,10,4);
-                sleep(250);
-                encoderStrafe(1, -10, 10 , 10, -10,5);
-                sleep(250);
-                encoderDrive(1,-10,-10,4);
-                sleep(250);
-                encoderStrafe(1, 10, -10 , -10, 10,5);
-                sleep(250);
+                //encoderDrive(1,10,10,4);
+                //sleep(250);
+                //encoderStrafe(1, -10, 10 , 10, -10,5);
+                //sleep(250);
+                //encoderDrive(1,-10,-10,4);
+                //sleep(250);
+                //encoderStrafe(1, 10, -10 , -10, 10,5);
+                //sleep(250);
+                //encoderDrive(1,10,10,4);
+                //sleep(250);
+                //encoderStrafe(1, -10, 10 , 10, -10,5);
+                //sleep(250);
+                //encoderDrive(1,-10,-10,4);
+                //sleep(250);
+                //encoderStrafe(1, 10, -10 , -10, 10,5);
+                //sleep(250);
+
                 stop();
             }
 

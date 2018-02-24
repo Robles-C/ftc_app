@@ -1,18 +1,10 @@
 package org.firstinspires.ftc.teamcode;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.DcMotor;
-import com.qualcomm.robotcore.hardware.Gamepad;
 import com.qualcomm.robotcore.hardware.Servo;
 import com.qualcomm.robotcore.util.ElapsedTime;
-import com.qualcomm.robotcore.util.Range;
-
-import org.firstinspires.ftc.teamcode.Autonomous.HardwareRobespierre;
-
-import static java.lang.Math.abs;
-
 
 /**
  * Created by Cristian on 10/04/17.
@@ -31,7 +23,6 @@ public class mecanumUno extends OpMode {
     Servo grabber = null;
     Servo color_arm = null;
     Servo j_arm = null;
-    boolean turbo = false;
 
     double v1 = 0;
     double v2 = 0;
@@ -54,8 +45,8 @@ public class mecanumUno extends OpMode {
         j_arm = hardwareMap.get(Servo.class,"servo4");
         extend.setPosition(.2);
         grabber.setPosition(.44);
-        color_arm.setPosition(.85);
-        j_arm.setPosition(0);
+        color_arm.setPosition(.9);
+        j_arm.setPosition(.985);
     }
 
     @Override
@@ -84,24 +75,6 @@ public class mecanumUno extends OpMode {
     }
 
     public void go() {
-        /*Turbo*/
-        if(!turbo){
-            telemetry.addLine("T Off");
-            if(gamepad1.right_bumper){
-                turbo = true;
-                telemetry.addLine("T On");
-                telemetry.update();
-            }
-        }
-        if(turbo){
-
-            telemetry.addLine("T On");
-            if(gamepad1.right_bumper){
-                turbo = false;
-                telemetry.addLine("T Off");
-                telemetry.update();
-            }
-        }
         /* Drive */
         if (gamepad1.dpad_right) {
             rightOne.setPower(1);
@@ -128,39 +101,33 @@ public class mecanumUno extends OpMode {
             leftTwo.setPower(1);
             telemetry.addData("Turning: ", "Front Going Left");
         } else if(gamepad1.right_stick_x > 0){
-            rightOne.setPower(-.5);
-            leftOne.setPower(.5);
-            rightTwo.setPower(-.5);
-            leftTwo.setPower(.5);
+            rightOne.setPower(-1);
+            leftOne.setPower(1);
+            rightTwo.setPower(-1);
+            leftTwo.setPower(1);
         } else if(gamepad1.right_stick_x < 0){
-            rightOne.setPower(.5);
-            leftOne.setPower(-.5);
-            rightTwo.setPower(.5);
-            leftTwo.setPower(-.5);
+            rightOne.setPower(1);
+            leftOne.setPower(-1);
+            rightTwo.setPower(1);
+            leftTwo.setPower(-1);
         }else {
-            if(!turbo) {
-                rightOne.setPower(v1);
-                leftOne.setPower(v2);
-                rightTwo.setPower(v3);
-                leftTwo.setPower(v4);
-            }else if(turbo){
-                rightOne.setPower((v1 * 1) + .2);
-                leftOne.setPower((v2 * 1) + .2);
-                rightTwo.setPower((v3 * 1) + .2);
-                leftTwo.setPower((v4 * 1) + .2);
-            }
+                rightOne.setPower(bumpShpeed(v1));
+                leftOne.setPower(bumpShpeed(v2));
+                rightTwo.setPower(bumpShpeed(v3));
+                leftTwo.setPower(bumpShpeed(v4));
         }
+
 
 
         /*Extend Servos*/
         if (extend.getPosition() == .2) {
             if (gamepad2.left_bumper) {
-                extend.setPosition(.9);
+                extend.setPosition(.77);
             }
         }
-        if(extend.getPosition() == .9) {
+        if(extend.getPosition() == .77) {
             if (gamepad2.right_bumper) {
-                extend.setPosition(.20);
+                extend.setPosition(.2);
             }
         }
         /*Grabbers*/
@@ -178,5 +145,13 @@ public class mecanumUno extends OpMode {
         liftPower = gamepad2.left_stick_y;
         lift.setPower(liftPower/-1.7);
 
+    }
+    public double bumpShpeed(double dub){
+        if(dub < 0){
+            dub -= .3;
+        }else if(dub > 0){
+            dub += .3;
+        }
+        return dub;
     }
 }
