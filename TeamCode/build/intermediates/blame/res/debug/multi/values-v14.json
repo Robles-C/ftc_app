@@ -12,59 +12,7 @@
                     "endOffset": 201
                 },
                 "from": {
-                    "file": "/Users/FTC6570/.android/build-cache/e1e2ef576f3577692da338391839fbffe027581d/output/res/values-v14/values-v14.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endLine": 4,
-                        "endColumn": 12,
-                        "endOffset": 201
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/FTC6570/Documents/ftc_app6570/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endLine": 4,
-                    "endColumn": 12,
-                    "endOffset": 201
-                },
-                "from": {
-                    "file": "/Users/FTC6570/.android/build-cache/10b4bab36d0def983bf6e6a80b00ad3c543642f2/output/res/values-v14/values-v14.xml",
-                    "position": {
-                        "startLine": 2,
-                        "startColumn": 4,
-                        "startOffset": 55,
-                        "endLine": 4,
-                        "endColumn": 12,
-                        "endOffset": 201
-                    }
-                }
-            }
-        ]
-    },
-    {
-        "outputFile": "/Users/FTC6570/Documents/ftc_app/TeamCode/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endLine": 4,
-                    "endColumn": 12,
-                    "endOffset": 201
-                },
-                "from": {
-                    "file": "/Users/FTC6570/.android/build-cache/ea657e4e82fe2188abd0fb98a7e6f0d13213c789/output/res/values-v14/values-v14.xml",
+                    "file": "/Users/FTC6570/.android/build-cache/8c04167b257927bef56b4d4a2651775328a1397e/output/res/values-v14/values-v14.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
